@@ -50,5 +50,13 @@
             $nombre = "Muzorn";
             echo 'Mi nombre es $nombre <br/>';
         ?>
+        <p>Ejemplo de cadena heredoc: </p>
+        <?php
+            echo <<<theEnd
+                Línea 1
+                Línea 2
+                Línea 3
+theEnd;
+        ?>
   </body>
 </html>
