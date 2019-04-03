@@ -26,5 +26,18 @@
          * echo "<p>Order processed at " . date('H:i, jS F Y') . "</p>";
          */
         ?>
+        <?php
+            // Crear nombres de variables cortos
+            $tireqty = $_POST['tireqty'];
+            $oilqty = $_POST['oilqty'];
+            $sparkqty = $_POST['sparkqty'];
+            // No hemos comprobado contenido ni nada: no hay validación
+        ?>
+        <p>Your order is as follows: </p>
+        <?php
+            echo htmlspecialchars($tireqty) . " tires" . "<br/>";
+            echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
+            echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
+        ?>
   </body>
 </html>
