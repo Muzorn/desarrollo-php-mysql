@@ -39,5 +39,16 @@
             echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
             echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
         ?>
+
+        <p>Ejemplo de interpolación de variables: </p>
+        <?php
+            $nombre = "Muzorn";
+            echo "Mi nombre es $nombre <br/>";
+        ?>
+        <p>Ejemplo de no interpolación de variables: </p>
+        <?php
+            $nombre = "Muzorn";
+            echo 'Mi nombre es $nombre <br/>';
+        ?>
   </body>
 </html>
