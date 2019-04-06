@@ -78,5 +78,19 @@
             $out = `dir c:`; // Listar el directorio actual en C:
             echo "<pre>" . $out . "</pre>";
         ?>
+        <h2>Probar y establecer tipos de variables</h2>
+        <?php
+            $a = 52;
+            echo gettype($a) . "<br/>";
+            settype($a, 'double');
+            echo gettype($a) . "<br/>";
+        ?>
+        <h2>Probar el estado de las variables</h2>
+        <?php
+            echo 'isset($tireqty):' . isset($tireqty) . "<br/>";
+            echo 'isset($nothere):' . isset($nothere) . "<br/>";
+            echo 'empty($tireqty):' . empty($tireqty) . "<br/>";
+            echo 'empty($nothere):' . empty($nothere) . "<br/>";
+        ?>
   </body>
 </html>
