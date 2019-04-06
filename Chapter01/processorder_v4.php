@@ -33,34 +33,39 @@
             $sparkqty = $_POST['sparkqty'];
             // No hemos comprobado contenido ni nada: no hay validación
 
-            echo "<p>Your order is as follows: </p>";
-            echo htmlspecialchars($tireqty) . " tires" . "<br/>";
-            echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
-            echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
-
             $totalqty = 0;
             $totalqty = $tireqty + $oilqty + $sparkqty;
 
-            // Definimos constantes para los precios de cada tipo de material
-            define('TIREPRICE', 100);
-            define('OILPRICE', 10);
-            define('SPARKPRICE', 4);
+            if ($totalqty == 0) {
+                echo "You did not order anything..." . "<br/>";
+            } else {
+                echo "<p>Your order is as follows: </p>";
+                echo htmlspecialchars($tireqty) . " tires" . "<br/>";
+                echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
+                echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
 
-            $totalamount = 0.00;
-            // Calculamos la cantidad total
-            $totalamount = $tireqty * TIREPRICE
-                            + $oilqty * OILPRICE
-                            + $sparkqty * SPARKPRICE;
 
-            $taxrate = 0.10; // el impuesto de ventas local es un 10%
-            //$totalamounttax = $totalamount * $taxrate;
-            //$total = $totalamount + $totalamounttax;
-            // Equivalente a: 
-            $totalamounttax = $totalamount * (1 + $taxrate);
+                // Definimos constantes para los precios de cada tipo de material
+                define('TIREPRICE', 100);
+                define('OILPRICE', 10);
+                define('SPARKPRICE', 4);
 
-            echo "<p>Items ordered: $totalqty</p>";
-            echo "<p>Subtotal: $" . number_format($totalamount, 2) . "</p>";
-            echo "<p>Total including tax: $" . number_format($totalamounttax, 2) . "</p>";
+                $totalamount = 0.00;
+                // Calculamos la cantidad total
+                $totalamount = $tireqty * TIREPRICE
+                    + $oilqty * OILPRICE
+                    + $sparkqty * SPARKPRICE;
+
+                $taxrate = 0.10; // el impuesto de ventas local es un 10%
+                //$totalamounttax = $totalamount * $taxrate;
+                //$total = $totalamount + $totalamounttax;
+                // Equivalente a:
+                $totalamounttax = $totalamount * (1 + $taxrate);
+
+                echo "<p>Items ordered: $totalqty</p>";
+                echo "<p>Subtotal: $" . number_format($totalamount, 2) . "</p>";
+                echo "<p>Total including tax: $" . number_format($totalamounttax, 2) . "</p>";
+            }
         ?>
   </body>
 </html>
