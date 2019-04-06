@@ -40,9 +40,12 @@
                 echo "You did not order anything..." . "<br/>";
             } else {
                 echo "<p>Your order is as follows: </p>";
-                echo htmlspecialchars($tireqty) . " tires" . "<br/>";
-                echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
-                echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
+                if ($tireqty > 0)
+                    echo htmlspecialchars($tireqty) . " tires" . "<br/>";
+                if ($oilqty > 0)
+                    echo htmlspecialchars($oilqty) . " bottles of oil" . "<br/>";
+                if ($sparkqty > 0)
+                    echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
 
 
                 // Definimos constantes para los precios de cada tipo de material
