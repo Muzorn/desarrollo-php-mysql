@@ -47,6 +47,25 @@
                 if ($sparkqty > 0)
                     echo htmlspecialchars($sparkqty) . " spark plugs" . "<br/>";
 
+                $find = $_POST['find'];
+
+                switch ($find) {
+                    case ("a"):
+                        echo "<p>Regular customer.</p>";
+                        break;
+                    case ("b"):
+                        echo "<p>Customer referred by TV advert.</p>";
+                        break;
+                    case ("c"):
+                        echo "<p>Customer referred by phone directory.</p>";
+                        break;
+                    case ("d"):
+                        echo "<p>Customer referred by word of mouth.</p>";
+                        break;
+                    default:
+                        echo "<p>We don't know how this customer found us.</p>";
+                        break;
+                }
 
                 // Definimos constantes para los precios de cada tipo de material
                 define('TIREPRICE', 100);
