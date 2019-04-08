@@ -4,7 +4,7 @@
    <title>Bob's Auto Parts - Order Form</title>
   </head>
   <body>
-    <form action="processorder_v4.php" method="post">
+    <form action="processorder_v4.php" method="post" accept-charset="UTF-8">
     <table style="border: 0px;">
     <tr style="background: #cccccc;">
       <td style="width: 150px; text-align: center;">Item</td>
@@ -30,6 +30,12 @@
                 <option value = "c">Phone directory</option>
                 <option value = "d">Word of mouth</option>
             </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Shipping Address</td>
+            <td>
+                <input type="text" name="address" size="50" maxlength="100">
             </td>
         </tr>
     <tr>

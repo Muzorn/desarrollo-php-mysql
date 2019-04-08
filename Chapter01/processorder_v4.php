@@ -31,6 +31,10 @@
             $tireqty = $_POST['tireqty'];
             $oilqty = $_POST['oilqty'];
             $sparkqty = $_POST['sparkqty'];
+            $address = $_POST['address'];
+
+            echo "Dirección enviada por el usuario: $address <br/>";
+
             // No hemos comprobado contenido ni nada: no hay validación
 
             $totalqty = 0;
