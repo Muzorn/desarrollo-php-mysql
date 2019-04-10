@@ -20,11 +20,18 @@
         // Bloqueamos el fichero para lectura
         flock($ordersFile, LOCK_SH);
 
+        echo "<p>Initial position of the file pointer (before writting the order): " . ftell($ordersFile) . "<br/><br/>";
+
         // Recorremos el fichero
         while (!feof($ordersFile)) {
             $order = fgets($ordersFile); // Obtenemos una línea
             echo htmlspecialchars($order) . "<br/>"; //Escribimos la línea anterior
         }
+
+        // Pruebas: posiciones de los punteros
+        echo "<p>Final position of the file pointer (after writting the order): " . ftell($ordersFile);
+        rewind($ordersFile);
+        echo "<p>Position of the file pointer after rewind() call: " . ftell($ordersFile);
 
         // Liberamos bloqueo y cerramos el fichero
         flock($ordersFile, LOCK_UN);
