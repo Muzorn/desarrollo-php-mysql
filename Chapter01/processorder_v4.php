@@ -106,10 +106,14 @@
                     .$sparkqty . "spark plugs\t\$" . $totalamount
                     . "\t" . $address . "\n";
 
+                // Bloqueamos el fichero para escritura
+                flock($ordersFile, LOCK_EX);
+
                 // Escribimos el pedido en el fichero
                 fwrite($ordersFile, $outputOrder);
 
-                // Cerramos el fichero
+                // Liberamos el bloqueo y cerramos el fichero
+                flock($ordersFile, LOCK_UN);
                 fclose($ordersFile);
             }
         ?>
